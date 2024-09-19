@@ -1,0 +1,1 @@
+SC CREATE "_GamigoZR" binpath= "C:\Server\GamigoZR\GamigoZR.exe"

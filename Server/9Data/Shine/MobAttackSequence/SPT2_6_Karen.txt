@@ -1,0 +1,51 @@
+;		Mob Attack Sequence									
+											
+#Ignore	\o042				; 인용부호 무시						
+#Exchange	#	\x20			; # => space						
+;#delimeter	\x20										
+											
+											
+#Table	AttSeq										
+#ColumnType	WORD	STRING[33]									
+#ColumnName	Order	Attack									
+											
+#Record	0	-									
+#Record	1	-									
+#Record	2	KarenWide									
+#Record	3	-									
+#Record	4	KarenWingWide									
+#Record	5	-									
+#Record	6	KarenWingAtk									
+#Record	7	-									
+#Record	8	KarenWingAtk									
+#Record	9	-									
+#Record	10	KarenWide									
+#Record	11	-									
+#Record	12	-									
+#Record	13	KarenWingAtk									
+#Record	14	KarenSPMinus									
+#Record	15	KarenWide									
+#Record	16	-									
+#Record	17	KarenWingAtk									
+#Record	18	-									
+#Record	19	-									
+#Record	20	KarenWingAtk									
+#Record	21	-									
+#Record	22	KarenWide									
+#Record	23	-									
+#Record	24	KarenWingAtk									
+#Record	25	-									
+#Record	26	KarenCaptivate									
+#Record	27	-									
+											
+#Table	SkillChange			; Si necesita usar diferentes habilidades dependiendo de las condiciones							
+#ColumnType	Index	Index	String[33]	String[33]							
+#ColumnName	Condition	Value	From	To							
+#Record	OutOfRange	-	-	KarenWingAtk	; Cuando el rango termina en el momento del golpe plano						
+#Record	OutOfRange	-	KarenWingWide	KarenWingAtk	; Cuando el rango termina en el momento del golpe plano						
+#Record	NextSkill	-	KarenCaptivate	KarenHeal	; Usa KarenHeal despues de la fascinacion						
+#Record	NextSkill	-	KarenSPMinus	KarenSPMinusHeal	; sp Use punto talon despues de la reduccion						
+#Record	HPLow	500	KarenSPMinus	KarenCaptivate	; Sangre 50% Cuando SP Usa la fascinacion de Karen en lugar de Marsh						
+#Record	HPLow	300	KarenWingWide	KarenCaptivate	; Sangre 30% Cuando Ala encantadora en lugar de ala Karen						
+#Record	HPLow	100	KarenWingAtk	KarenHeal	; Sangre 10% Usa los talones en la secuencia de ataque de alas a continuacion						
+#End											
